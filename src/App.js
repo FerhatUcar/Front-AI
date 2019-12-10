@@ -1,26 +1,55 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {useState, Fragment} from 'react';
+import ReactFileReader from 'react-file-reader';
+import { CsvToHtmlTable } from 'react-csv-to-table';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+import './assets/scss/App.scss';
+
+const App = () => {
+    const [csvData, setCsvData] = useState(null);
+
+    const rows = [1, 2, 3];
+    const feedback = ['positive', 'negative', 'positive'];
+
+    const handleFiles = files => {
+        let reader = new FileReader();
+        reader.onload = () => setCsvData(reader.result);
+        reader.readAsText(files[0]);
+    };
+
+    return (
+        <div className="container">
+            <div className="box">
+                <ReactFileReader handleFiles={handleFiles} fileTypes={'.csv'}>
+                    <button className='box__btn'>Upload</button>
+                </ReactFileReader>
+                <div className="box__table">
+                    {csvData && (
+                        <Fragment>
+                            <CsvToHtmlTable
+                                data={csvData}
+                                csvDelimiter=";"
+                                tableClassName="table"
+                            />
+                            <table className="box__feedback">
+                                <thead className="box__feedback--head">
+                                    <tr><th>Feedback</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        {rows.map(row => (
+                                            <td key={row}>
+                                                {feedback[0]}
+                                            </td>
+                                        ))}
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </Fragment>
+                    )}
+                </div>
+            </div>
+        </div>
+    );
+};
 
 export default App;

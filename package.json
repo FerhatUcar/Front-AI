@@ -9,7 +9,9 @@
     "bourbon": "^6.0.0",
     "node-sass": "^4.13.0",
     "react": "^16.12.0",
+    "react-csv-to-table": "0.0.4",
     "react-dom": "^16.12.0",
+    "react-file-reader": "^1.1.4",
     "react-scripts": "3.3.0"
   },
   "scripts": {

@@ -1,0 +1,120 @@
+@import "../../../node_modules/bourbon/core/bourbon";
+@import "components/table";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: 0;
+}
+
+body, html {
+  background: #141E30;
+  background: -webkit-linear-gradient(to right, #243B55, #141E30);
+  background: linear-gradient(to right, #243B55, #141E30);
+
+  height: 100%;
+  font-family: sans-serif;
+}
+
+@font-face {
+  font-family: OpenSans-Regular;
+  src: url('../fonts/OpenSans/OpenSans-Regular.ttf');
+}
+
+.container {
+  margin: 1rem auto;
+  padding: 1rem;
+}
+
+.box {
+  &__btn {
+    @media (max-width: 767px) {
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    margin: 10px 70px 40px;
+    text-transform: uppercase;
+    font-weight: bold;
+    position: relative;
+    display: block;
+    padding: 1rem;
+    overflow: hidden;
+    cursor: pointer;
+    border-width: 0;
+    outline: none;
+    border-radius: 2px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, .6);
+    background-color: white;
+    transition: background-color .3s;
+    width: 200px;
+
+    &:hover {
+      background-color: #4FC3A1;
+      color: white;
+    }
+
+    &:before {
+      @include position(absolute, 50% null null 50%);
+      content: "";
+      display: block;
+      width: 0;
+      padding-top: 0;
+      border-radius: 100%;
+      background-color: rgba(236, 240, 241, .3);
+      -webkit-transform: translate(-50%, -50%);
+      -moz-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      -o-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+    }
+
+    &:active:before {
+      width: 120%;
+      padding-top: 120%;
+      transition: width .2s ease-out, padding-top .2s ease-out;
+    }
+  }
+
+  &__table {
+    @media (max-width: 767px) {
+      margin: 1rem 0 0 0;
+    }
+
+    display: flex;
+    margin: 10px 70px 70px;
+    box-shadow: 0 35px 50px rgba( 0, 0, 0, 0.2 );
+  }
+
+  &__feedback {
+    color: white;
+    padding: 1rem;
+
+    @media (max-width: 767px) {
+      width: 20%;
+    }
+
+    tbody tr td {
+      padding: 1rem;
+      width: 100%;
+      text-align: center;
+      display: block;
+
+      @media (max-width: 767px) {
+        padding: 0;
+        height: 63px;
+
+        &:last-child {
+          height: 0;
+        }
+      }
+    }
+
+    &--head {
+      @media (max-width: 767px) {
+        display: none;
+      }
+    }
+  }
+}
