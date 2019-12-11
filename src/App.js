@@ -8,7 +8,6 @@ const App = () => {
     const [csvData, setCsvData] = useState(null);
 
     const rows = [1, 2, 3];
-    const feedback = ['positive', 'negative', 'positive'];
 
     const handleFiles = files => {
         let reader = new FileReader();
@@ -38,7 +37,7 @@ const App = () => {
                                     <tr>
                                         {rows.map(row => (
                                             <td key={row}>
-                                                {feedback[0]}
+                                                <i className="far fa-smile" />
                                             </td>
                                         ))}
                                     </tr>
