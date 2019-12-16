@@ -7,6 +7,8 @@ import './assets/scss/App.scss';
 const App = () => {
     const [csvData, setCsvData] = useState(null);
 
+    const test = null;
+
     const handleFiles = files => {
         let reader = new FileReader();
         reader.onload = () => setCsvData(reader.result);
