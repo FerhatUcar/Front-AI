@@ -1,0 +1,31 @@
+.box {
+  .react-tabs {
+    &__tab {
+      background: #65dbff;
+      color: white;
+      border: 0;
+      border-radius: 5px 5px 0 0;
+      bottom: 0;
+      min-width: 100px;
+
+      &--selected {
+        background: #00c4ff;
+        color: white;
+      }
+
+      &-list {
+        margin: 0;
+        border: 0;
+      }
+
+      &-panel {
+        background-color: white;
+        box-shadow: 0 6px 6px rgba(0,0,0,0.10), 0 3px 6px rgba(0,0,0,0.15);
+      }
+    }
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    color: black;
+  }
+}

@@ -1,37 +1,37 @@
-import React, {useState} from 'react';
-import ReactFileReader from 'react-file-reader';
-import { CsvToHtmlTable } from 'react-csv-to-table';
+import React, {Fragment}  from 'react';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
+// Components
+import Navbar from "./components/layout/Navbar";
+
+// Pages
+import Home from "./components/pages/Home";
+import About from "./components/pages/About";
+import ReadFront from "./components/pages/ReadFront";
+import SeeFront from "./components/pages/SeeFront";
+import ClassifyFront from "./components/pages/ClassifyFront";
+
+// Style
 import './assets/scss/App.scss';
 
+
 const App = () => {
-    const [csvData, setCsvData] = useState(null);
-
-    const test = null;
-
-    const handleFiles = files => {
-        let reader = new FileReader();
-        reader.onload = () => setCsvData(reader.result);
-        reader.readAsText(files[0]);
-    };
-
     return (
-        <div className="container">
-            <div className="box">
-                <ReactFileReader handleFiles={handleFiles} fileTypes={'.csv'}>
-                    <button className='box__btn'>Upload</button>
-                </ReactFileReader>
-                <div className="box__table">
-                    {csvData && (
-                        <CsvToHtmlTable
-                            data={csvData}
-                            csvDelimiter=";"
-                            tableClassName="table"
-                        />
-                    )}
+        <Router>
+            <Fragment>
+                <Navbar />
+                <div className="container">
+                    <Switch>
+                        <Route exact path="/" component={Home} />
+                        <Route exact path="/about" component={About} />
+                        <Route exact path="/read" component={ReadFront} />
+                        <Route exact path="/see" component={SeeFront} />
+                        <Route exact path="/classify" component={ClassifyFront} />
+                    </Switch>
                 </div>
-            </div>
-        </div>
+            </Fragment>
+        </Router>
+
     );
 };
 

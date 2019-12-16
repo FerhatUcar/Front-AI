@@ -1,0 +1,39 @@
+.card-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  &__item {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    font-size: 30px;
+    text-align: center;
+    display: flex;
+    transition: all .2s ease-in-out;
+
+    &:hover {
+      background-color: #eaeaea;
+    }
+  }
+
+  &__image {
+    @include size(100px);
+    display: block;
+    background-color: #707070;
+    align-self: flex-start;
+    margin-right: 1rem;
+    color: white;
+  }
+
+  &__text {
+    font-size: 14px;
+    text-align: left;
+    flex: 1 1 auto;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .card-grid {
+    display: block;
+    width: 100%;
+  }
+}
