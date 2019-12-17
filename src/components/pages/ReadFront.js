@@ -1,12 +1,12 @@
 import React, {Fragment} from 'react';
-import ReadCsv from "../read/ReadCsv";
+import Read from '../read/Read';
 
 const ReadFront = () => {
     return (
         <Fragment>
             <h1>Read Front</h1>
             <div className="box">
-                <ReadCsv />
+                <Read />
             </div>
         </Fragment>
     );

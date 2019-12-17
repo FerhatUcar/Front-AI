@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 
 const Home = ({ title, title2 })  => {
     return (
-        <div>
+        <div className="box__small">
             <h1>{title} <span>{title2}</span></h1>
-            <p>
+            <p className="white">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua.
                 Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris

@@ -1,12 +1,12 @@
 import React, {Fragment} from 'react';
-import Classify from "../classify/Classify";
+import ReadCsv from "../classify/ReadCsv";
 
 const ClassifyFront = () => {
     return (
         <Fragment>
             <h1>Classify Front</h1>
             <div className="box">
-                <Classify />
+                <ReadCsv />
             </div>
         </Fragment>
     );
