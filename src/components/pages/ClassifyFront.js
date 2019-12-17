@@ -1,12 +1,14 @@
-import React from 'react';
+import React, {Fragment} from 'react';
 import Classify from "../classify/Classify";
 
 const ClassifyFront = () => {
     return (
-        <div>
-            <h1>Classify Page</h1>
-            <Classify />
-        </div>
+        <Fragment>
+            <h1>Classify Front</h1>
+            <div className="box">
+                <Classify />
+            </div>
+        </Fragment>
     );
 };
 

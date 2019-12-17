@@ -53,24 +53,37 @@ body, html {
 }
 
 .container {
-  margin: 1rem auto;
+  margin: 0 auto;
   padding: 1rem 2rem;
-  max-width: 1100px;
 }
 
 a {
-  color: var(--primary-color);
+  color: black;
   text-decoration: none;
+
+  &:hover {
+    text-decoration: none;
+    color: white;
+  }
+
+  &.sm {
+    font-size: small;
+  }
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Bebas Neue', cursive;
   letter-spacing: 2px;
   color: white;
+  margin-bottom: 1rem;
 
   span {
     color: $primary;
   }
+}
+
+span {
+  color: white;
 }
 
 .box {
@@ -79,9 +92,8 @@ h1, h2, h3, h4, h5, h6 {
       width: 100%;
       margin: 0 auto;
     }
-
-    margin: 10px 70px 40px;
     text-transform: uppercase;
+    text-align: center;
     font-weight: bold;
     position: relative;
     display: block;
@@ -123,13 +135,21 @@ h1, h2, h3, h4, h5, h6 {
     }
   }
 
+  &__buttons {
+    @include flex(flex, center, center);
+    margin-bottom: 1rem;
+
+    button, span {
+      margin-right: 1rem;
+    }
+  }
+
   &__table {
     @media (max-width: 767px) {
       margin: 1rem 0 0 0;
     }
 
     display: flex;
-    margin: 10px 70px 70px;
     box-shadow: 0 35px 50px rgba( 0, 0, 0, 0.2 );
   }
 }
@@ -141,6 +161,6 @@ code {
 
 p {
   margin-bottom: 1rem;
-  color: white;
+  color: black;
   font-size: 1rem;
 }

@@ -1,11 +1,14 @@
-import React from 'react';
+import React, {Fragment} from 'react';
 import Tabs from '../see/Tabs';
 
 const SeeFront = () => {
     return (
-        <div className="box">
-            <Tabs/>
-        </div>
+        <Fragment>
+            <h1>See Front</h1>
+            <div className="box">
+                <Tabs/>
+            </div>
+        </Fragment>
     );
 };
 
