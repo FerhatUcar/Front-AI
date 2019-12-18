@@ -3,6 +3,9 @@ import ReactFileReader from 'react-file-reader';
 import { CsvToHtmlTable } from 'react-csv-to-table';
 import { CSVLink } from "react-csv";
 
+import data from "../../data/data";
+import headers from "../../data/headers";
+
 const ReadCsv = () => {
     const [csvData, setCsvData] = useState(null);
 
@@ -11,18 +14,6 @@ const ReadCsv = () => {
         reader.onload = () => setCsvData(reader.result);
         reader.readAsText(files[0]);
     };
-
-    const headers = [
-        { label: "First Name", key: "firstname" },
-        { label: "Last Name", key: "lastname" },
-        { label: "Email", key: "email" }
-    ];
-
-    const data = [
-        { firstname: "Ahmed", lastname: "Tomi", email: "ah@smthing.co.com" },
-        { firstname: "Raed", lastname: "Labes", email: "rl@smthing.co.com" },
-        { firstname: "Yezzi", lastname: "Min l3b", email: "ymin@cocococo.com" }
-    ];
 
     return (
         <Fragment>

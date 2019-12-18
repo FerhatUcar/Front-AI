@@ -15,51 +15,51 @@ const Navbar = ({ title, title2 }) => {
 
     return (
         <div className="navbar">
-            <h1>
-                {title} <span>{title2}</span>
-            </h1>
-            <ul>
-                <li>
-                    <Button aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
+            <div className="navbar__inner">
+                <h1>{title} <span>{title2}</span></h1>
+                <ul>
+                    <li>
+                        <Button aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
                         <span className="navbar__name"> Menu
                     </span>
-                        <i className="fas fa-chevron-down"/>
-                    </Button>
-                </li>
-                <Menu
-                    id="simple-menu"
-                    anchorEl={anchorEl}
-                    keepMounted
-                    open={Boolean(anchorEl)}
-                    onClose={handleClose}
-                >
-                    <MenuItem onClick={handleClose}>
-                        <Link to="/" className="menu-link">
-                            <i className="fas fa-home" /> Home
-                        </Link>
-                    </MenuItem>
-                    <MenuItem onClick={handleClose}>
-                        <Link to="/about" className="menu-link">
-                            <i className="fas fa-info-circle" /> About
-                        </Link>
-                    </MenuItem>
-                    <MenuItem onClick={handleClose}>
-                        <Link to="/read" className="menu-link">
-                            <i className="fas fa-info-circle" /> Read Front
-                        </Link>
-                    </MenuItem>
-                    <MenuItem onClick={handleClose}>
-                        <Link to="/classify" className="menu-link">
-                            <i className="fas fa-info-circle" /> Classify Front
-                        </Link>
-                    </MenuItem>
-                    <MenuItem onClick={handleClose}>
-                        <Link to="/see" className="menu-link">
-                            <i className="fas fa-info-circle" /> See Front
-                        </Link>
-                    </MenuItem>
-                </Menu>
-            </ul>
+                            <i className="fas fa-chevron-down"/>
+                        </Button>
+                    </li>
+                    <Menu
+                        id="simple-menu"
+                        anchorEl={anchorEl}
+                        keepMounted
+                        open={Boolean(anchorEl)}
+                        onClose={handleClose}
+                    >
+                        <MenuItem onClick={handleClose}>
+                            <Link to="/" className="menu-link">
+                                <i className="fas fa-home" /> Home
+                            </Link>
+                        </MenuItem>
+                        <MenuItem onClick={handleClose}>
+                            <Link to="/about" className="menu-link">
+                                <i className="fas fa-info-circle" /> About
+                            </Link>
+                        </MenuItem>
+                        <MenuItem onClick={handleClose}>
+                            <Link to="/read" className="menu-link">
+                                <i className="fas fa-info-circle" /> Read Front
+                            </Link>
+                        </MenuItem>
+                        <MenuItem onClick={handleClose}>
+                            <Link to="/classify" className="menu-link">
+                                <i className="fas fa-info-circle" /> Classify Front
+                            </Link>
+                        </MenuItem>
+                        <MenuItem onClick={handleClose}>
+                            <Link to="/see" className="menu-link">
+                                <i className="fas fa-info-circle" /> See Front
+                            </Link>
+                        </MenuItem>
+                    </Menu>
+                </ul>
+            </div>
         </div>
     );
 };

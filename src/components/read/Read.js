@@ -3,7 +3,7 @@ import React, {Fragment} from 'react';
 const Read = () => {
     return (
         <Fragment>
-            <p>Read front app here</p>
+            <p className="white">Read front app here</p>
         </Fragment>
     );
 };

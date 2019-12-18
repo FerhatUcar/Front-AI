@@ -1,0 +1,10 @@
+[{
+  "label": "First Name",
+  "key": "firstname"
+},{ 
+  "label": "Last Name", 
+  "key": "lastname" 
+},{ 
+  "label": "Email", 
+  "key": "email" 
+}]
