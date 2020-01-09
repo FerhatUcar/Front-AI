@@ -143,7 +143,7 @@ span {
     @include flex(flex, center, center);
     margin-bottom: 1rem;
 
-    button, span {
+    button, span, a {
       margin-right: 1rem;
     }
   }
@@ -155,6 +155,46 @@ span {
 
     display: flex;
     box-shadow: 0 35px 50px rgba( 0, 0, 0, 0.2 );
+  }
+
+  &__feedback {
+    font-size: 12px;
+    font-weight: normal;
+    border: none;
+    border-collapse: collapse;
+    max-width: 100%;
+    white-space: nowrap;
+    background-color: white;
+
+    tbody tr td:nth-child(even) {
+      background: #f2f2f2;
+    }
+
+    @media (max-width: 767px) {
+      width: 20%;
+    }
+
+    tbody tr td {
+      padding: 1rem;
+      width: 100%;
+      text-align: center;
+      display: block;
+
+      @media (max-width: 767px) {
+        padding: 0;
+        height: 63px;
+
+        &:last-child {
+          height: 0;
+        }
+      }
+    }
+
+    &--head {
+      @media (max-width: 767px) {
+        display: none;
+      }
+    }
   }
 }
 
@@ -171,4 +211,8 @@ p {
   &.white {
     color: white;
   }
+}
+
+.table {
+  border-right: 1px solid #c5c5c5;
 }

@@ -9,10 +9,25 @@ import headers from "../../data/headers";
 const ReadCsv = () => {
     const [csvData, setCsvData] = useState(null);
 
+    const rows = [1, 2, 3];
+    const feedback = ['yes', 'no', 'yes'];
+
+    const [show, setShow] = useState(false);
+    const [text, setText] = useState('Classify');
+    const [disable, setDisable] = useState(false);
+
     const handleFiles = files => {
         let reader = new FileReader();
         reader.onload = () => setCsvData(reader.result);
         reader.readAsText(files[0]);
+    };
+
+    const showClassify = e => {
+        e.preventDefault();
+
+        setShow(true);
+        setText('Classified');
+        setDisable(true);
     };
 
     return (
@@ -21,7 +36,7 @@ const ReadCsv = () => {
                 <ReactFileReader handleFiles={handleFiles} fileTypes={'.csv'}>
                     <button className='box__btn'>Upload</button>
                 </ReactFileReader>
-                <span>or</span>
+                <span>|</span>
                 <CSVLink
                     className="box__btn sm"
                     separator={";"}
@@ -31,15 +46,43 @@ const ReadCsv = () => {
                 >
                     Download sample CSV
                 </CSVLink>
-
+                {csvData && (
+                    <Fragment>
+                        <span>|</span>
+                        <button
+                            disabled={disable}
+                            onClick={showClassify}
+                            className='box__btn'
+                        >{text}</button>
+                    </Fragment>
+                )}
             </div>
             <div className="box__table">
                 {csvData && (
-                    <CsvToHtmlTable
-                        data={csvData}
-                        csvDelimiter=";"
-                        tableClassName="table"
-                    />
+                    <Fragment>
+                        <CsvToHtmlTable
+                            data={csvData}
+                            csvDelimiter=";"
+                            tableClassName="table"
+                        />
+                        {show && (
+                            <table className="box__feedback">
+                                <thead className="box__feedback--head">
+                                    <tr><th>Feedback</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        {rows.map(row => (
+                                            <td key={row}>
+                                                {feedback[0]}
+                                            </td>
+                                        ))}
+                                    </tr>
+                                </tbody>
+                            </table>
+                        )}
+                    </Fragment>
+
                 )}
             </div>
         </Fragment>
