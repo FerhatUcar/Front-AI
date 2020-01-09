@@ -8,13 +8,12 @@ import headers from "../../data/headers";
 
 const ReadCsv = () => {
     const [csvData, setCsvData] = useState(null);
-
-    const rows = [1, 2, 3];
-    const feedback = ['yes', 'no', 'yes'];
-
     const [show, setShow] = useState(false);
     const [text, setText] = useState('Classify');
     const [disable, setDisable] = useState(false);
+
+    const rows = [1, 2, 3];
+    const feedback = ['yes', 'no', 'yes'];
 
     const handleFiles = files => {
         let reader = new FileReader();
@@ -82,7 +81,6 @@ const ReadCsv = () => {
                             </table>
                         )}
                     </Fragment>
-
                 )}
             </div>
         </Fragment>
