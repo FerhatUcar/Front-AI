@@ -186,19 +186,15 @@ span {
       margin-top: 1rem;
     }
 
-    tbody tr td:nth-child(even) {
-      background: #f2f2f2;
-    }
-
     tbody tr td {
       padding: 1rem;
       width: 100%;
       text-align: center;
       display: block;
-    }
 
-    &--head {
-
+      &:nth-child(even) {
+        background: #f2f2f2;
+      }
     }
   }
 }

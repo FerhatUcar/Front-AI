@@ -72,9 +72,9 @@ const ReadCsv = () => {
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        {rows.map(row => (
+                                        {rows.map((row, index) => (
                                             <td key={row}>
-                                                {feedback[0]}
+                                                {feedback[index]}
                                             </td>
                                         ))}
                                     </tr>
