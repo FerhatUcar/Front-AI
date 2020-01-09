@@ -36,7 +36,7 @@ const ReadCsv = () => {
                 <ReactFileReader handleFiles={handleFiles} fileTypes={'.csv'}>
                     <button className='box__btn'>Upload</button>
                 </ReactFileReader>
-                <span>|</span>
+                <span className="divider">|</span>
                 <CSVLink
                     className="box__btn sm"
                     separator={";"}
@@ -48,7 +48,7 @@ const ReadCsv = () => {
                 </CSVLink>
                 {csvData && (
                     <Fragment>
-                        <span>|</span>
+                        <span className="divider">|</span>
                         <button
                             disabled={disable}
                             onClick={showClassify}
